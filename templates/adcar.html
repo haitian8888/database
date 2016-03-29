@@ -1,0 +1,45 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>Car details</h1>
+<table>
+
+<table border="1">
+  <tr>
+    <th>Cost</th>
+    <th>Model</th>
+    <th>VIN</th>
+    <th>Type</th>
+    <th>SeatNo</th>
+  </tr>
+  {% for n in data %}
+  <tr>
+  <th>{{n[0]}}</th>
+  <th>{{n[1]}}</th>
+  <th>{{n[2]}}</th>
+  <th>{{n[3]}}</th>
+  <th>{{n[4]}}</th>
+
+       {% endfor %}
+  </tr>
+</table>
+
+<form method="POST" action="/addcar">
+<p>Add new car: Cost<input type="number" name="Cost"> Model<input type="text" name="Model">VIN<input type="text" name="VIN">Type<input type="text" name="Type">SeatNo<input type="number" name="SeatNo"> <input type="submit" value="addcar"></p>
+</form>
+
+<form method="POST" action="/addcopy">
+<p>Add a copy: VIN<input type="number" name="VIN"> CopyID<input type="text" name="CopyID">IsChecked<input type="text" name="IsChecked">IsHold<input type="text" name="IsHold">IsRepaired<input type="number" name="IsRepaired"> <input type="submit" value="addcopy"></p>
+</form>
+
+
+
+
+</body>

@@ -1,0 +1,51 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>Client Page</h1>
+  Hello <div>{{dict.username}}</div>
+<table border="1">
+  <tr>
+    <th>Username</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Age</th>
+    <th>Penalty</th>
+    <th>SSN</th>
+    <th>Email</th>
+  </tr>
+  {% for n in dict.cost %}
+  <tr>
+  <th>{{n[0]}}</th>
+  <th>{{n[1]}}</th>
+  <th>{{n[2]}}</th>
+  <th>{{n[3]}}</th>
+  <th>{{n[4]}}</th>
+  <th>{{n[5]}}</th>
+  <th>{{n[6]}}</th>
+       {% endfor %}
+  </tr>
+</table>
+
+<form method="POST" action="/info?username={{dict.username}}">
+<p>Change your email:<input type="text" name="Email"><input type="submit" value="info"></p></form>
+
+
+<img src="http://www.revoba.com/galleryimages/v9wyg7vkxgfdw1swyr.jpg" alt="HTML5 Icon" style="width600px;height:300px">
+<p><a href="/cartype">Car types</a></p>
+<p><a href="/choose">Choose Car</a></p>
+
+<form method="POST" action="/hist">
+<p>Enter your username for car rental history:<input type="text" name="username"><input type="submit" value="name"></p></form>
+
+</body>
+
+
+</html>
+

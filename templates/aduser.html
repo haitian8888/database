@@ -1,0 +1,41 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>User details</h1>
+<table>
+
+<table border="1">
+  <tr>
+    <th>Username</th>
+    <th>Name</th>
+    <th>DOB</th>
+    <th>Age</th>
+    <th>Penalty</th>
+    <th>SSN</th>
+    <th>Email</th>
+  </tr>
+  {% for n in data %}
+  <tr>
+  <th>{{n[0]}}</th>
+  <th>{{n[1]}}</th>
+  <th>{{n[2]}}</th>
+  <th>{{n[3]}}</th>
+  <th>{{n[4]}}</th>
+  <th>{{n[5]}}</th>
+  <th>{{n[6]}}</th>
+       {% endfor %}
+  </tr>
+</table>
+<form method="POST" action="/adage">
+<p>user's age is greater than <input type="text" name="age"> <input type="submit" value="adage"> </p>
+</form>
+
+
+</body>
